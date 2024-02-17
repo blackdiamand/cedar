@@ -1,8 +1,6 @@
 import {createContext, useState} from "react";
-export const questionContext = createContext({
-  question : "Who is the President?",
-  answer : "Joe Biden",
-  answers : ["Joe Biden", "Barack Obama", "Donald Trump"]
-});
+import {questionBank} from "./naturalization_test_bank";
+
+export const questionContext = createContext(questionBank[Math.floor(Math.random() * 200)]);
 
 export const PointsContext = createContext(0);

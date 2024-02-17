@@ -1,4 +1,4 @@
-﻿data = [{
+﻿export const questionBank = [{
   "category": "A: Principles of American Democracy",
   "question_id": 1,
   "question": "What is the supreme law of the land?",
@@ -2175,7 +2175,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 101,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Martin Luther King, Jr. Day",
@@ -2186,7 +2186,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 102,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Presidents’ Day",
@@ -2197,7 +2197,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 103,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Memorial Day",
@@ -2208,7 +2208,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 104,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Independence Day",
@@ -2219,7 +2219,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 105,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Labor Day",
@@ -2230,7 +2230,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 106,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Columbus Day",
@@ -2241,7 +2241,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 107,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Veterans Day",
@@ -2252,7 +2252,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 108,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Thanksgiving",
@@ -2263,7 +2263,7 @@
     ]
   },
   {
-    "question_id": 100,
+    "question_id": 109,
     "category": "Holidays",
     "question": "Name one national U.S. holiday.",
     "correct_answer": "Christmas",
