@@ -4,10 +4,10 @@ import * as React from "react";
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
+      <Text>Welcome to The App!</Text>
       <Button
-        title="Go to Details"
-        onPress={() => navigation.navigate('Details')}
+        title="Start Questions"
+        onPress={() => navigation.navigate('Questions')}
       />
     </View>
   );
