@@ -1,18 +1,18 @@
 import {Button, Text, View} from "react-native";
 import * as React from "react"
 import {useContext} from "react";
-import {questionContext, pointsContext} from "../Contexts";
+import {questionContext, PointsContext} from "../Contexts";
 
 //json object -> buttons
 function buttons(question){
-  const points = useContext(questionContext);
+  const {context, setContext} = useContext(PointsContext);
   return (
     <>
       {question.answers.map(answer =>
         <Button
           key={answer}
           title={answer}
-          //onPress={() => incrementScore(answer)}
+          onPress={() => answer === question.answer ? setContext(context + 1): ""}
         />
       )}
     </>
@@ -21,12 +21,12 @@ function buttons(question){
 
 function QuestionScreen({ navigation}) {
   const question = useContext(questionContext);
-  console.log(question);
-
+  const {context, setContext} = useContext(PointsContext);
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Question: {question.question} </Text>
       {buttons(question)}
+      <Text>Points: {context}</Text>
     </View>
   );
 }

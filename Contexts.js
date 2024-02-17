@@ -5,6 +5,4 @@ export const questionContext = createContext({
   answers : ["Joe Biden", "Barack Obama", "Donald Trump"]
 });
 
-export const pointsContext = createContext({
-  points : 0
-});
+export const PointsContext = createContext(0);
