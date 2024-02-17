@@ -8,14 +8,14 @@ import HomeScreen from "./Components/Home";
 import QuestionScreen from "./Components/Question";
 import {createContext, useState} from "react";
 import {GlobalContext, QuestionContext} from "./Contexts";
-import AIQuestionScreen from "./Components/AIQuestion";
 import {questionBank} from "./naturalization_test_bank";
+import WrongQuestion from "./Components/WrongQuestion";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
 
-  const [pointsContext, setPointsContext] = useState({score:0});
+  const [pointsContext, setPointsContext] = useState({score:0, wrongAnswers : []});
   const [questionContext, setQuestionContext] = useState(questionBank[Math.floor(Math.random() * 200)]);
 
   return (
@@ -25,7 +25,7 @@ const App = () => {
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Cedar" component={HomeScreen} />
             <Stack.Screen name="Questions" component={QuestionScreen} />
-            <Stack.Screen name="AI Questions" component={AIQuestionScreen} />
+            <Stack.Screen name="Wrong Questions" component={WrongQuestion} />
           </Stack.Navigator>
         </NavigationContainer>
       </GlobalContext.Provider>
