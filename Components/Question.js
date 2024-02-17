@@ -1,23 +1,20 @@
 import {Button, Text, View} from "react-native";
 import * as React from "react"
 import {useContext} from "react";
-import {questionContext} from "../Contexts";
+import {questionContext, pointsContext} from "../Contexts";
 
 //json object -> buttons
 function buttons(question){
-  for (let answer in question.answers){
-    
-  }
+  const points = useContext(questionContext);
   return (
     <>
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.navigate('Questions')}
-      />
-      <Button
-        title="Go to Details... again"
-        onPress={() => navigation.navigate('Questions')}
-      />
+      {question.answers.map(answer =>
+        <Button
+          key={answer}
+          title={answer}
+          //onPress={() => incrementScore(answer)}
+        />
+      )}
     </>
   );
 }
