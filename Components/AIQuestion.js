@@ -1,7 +1,7 @@
 import {Button, Text, View} from "react-native";
 import * as React from "react"
 import {useContext} from "react";
-import {questionContext, PointsContext} from "../Contexts";
+import {QuestionContext, PointsContext} from "../Contexts";
 
 //json object -> buttons
 function buttons(question){
@@ -20,7 +20,7 @@ function buttons(question){
 }
 
 function AIQuestionScreen({ navigation}) {
-  const question = useContext(questionContext);
+  const question = useContext(QuestionContext);
   const {context, setContext} = useContext(PointsContext);
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>

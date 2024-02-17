@@ -7,17 +7,20 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import HomeScreen from "./Components/Home";
 import QuestionScreen from "./Components/Question";
 import {createContext, useState} from "react";
-import {PointsContext} from "./Contexts";
+import {PointsContext, QuestionContext} from "./Contexts";
 import AIQuestionScreen from "./Components/AIQuestion";
+import {questionBank} from "./naturalization_test_bank";
 
 const Stack = createNativeStackNavigator();
 
 const App = () => {
 
-  const [context, setContext] = useState(0);
+  const [pointsContext, setPointsContext] = useState(0);
+  const [questionContext, setQuestionContext] = useState(questionBank[Math.floor(Math.random() * 200)]);
 
   return (
-      <PointsContext.Provider value={{context:context, setContext:setContext}}>
+    <QuestionContext.Provider value={{questionContext:questionContext, setQuestionContext:setQuestionContext}}>
+      <PointsContext.Provider value={{pointsContext:pointsContext, setPointsContext:setPointsContext}}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Cedar" component={HomeScreen} />
@@ -26,6 +29,7 @@ const App = () => {
           </Stack.Navigator>
         </NavigationContainer>
       </PointsContext.Provider>
+    </QuestionContext.Provider>
   );
 }
 
