@@ -8,6 +8,7 @@ import HomeScreen from "./Components/Home";
 import QuestionScreen from "./Components/Question";
 import {createContext, useState} from "react";
 import {PointsContext} from "./Contexts";
+import AIQuestionScreen from "./Components/AIQuestion";
 
 const Stack = createNativeStackNavigator();
 
@@ -21,6 +22,7 @@ const App = () => {
           <Stack.Navigator initialRouteName="Home">
             <Stack.Screen name="Cedar" component={HomeScreen} />
             <Stack.Screen name="Questions" component={QuestionScreen} />
+            <Stack.Screen name="AI Questions" component={AIQuestionScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </PointsContext.Provider>
