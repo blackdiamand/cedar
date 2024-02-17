@@ -1,11 +1,11 @@
 import {Button, Text, View} from "react-native";
 import * as React from "react"
 import {useContext} from "react";
-import {QuestionContext, PointsContext} from "../Contexts";
+import {QuestionContext, GlobalContext} from "../Contexts";
 
 //json object -> buttons
 function buttons(question){
-  const {context, setContext} = useContext(PointsContext);
+  const {context, setContext} = useContext(GlobalContext);
   return (
     <>
       {question.answers.map(answer =>
@@ -21,7 +21,7 @@ function buttons(question){
 
 function AIQuestionScreen({ navigation}) {
   const question = useContext(QuestionContext);
-  const {context, setContext} = useContext(PointsContext);
+  const {context, setContext} = useContext(GlobalContext);
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Question: {question.question} </Text>
