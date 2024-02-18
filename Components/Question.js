@@ -44,10 +44,6 @@ function QuestionScreen({ navigation}) {
   }
 
   const handleSubmit = async () => {
-    if (userInput.trim() === '') {
-      Alert.alert('Please enter your answer');
-      return;
-    }
     const currentQuestion = questionContext.question;
     const correctAnswer = questionContext.correct_answer;
     const incorrectAnswers = questionContext.incorrect_answers;
@@ -65,7 +61,7 @@ function QuestionScreen({ navigation}) {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': 'API_KEY',
+          'Authorization': 'Bearer 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',
         },
         body: JSON.stringify({
           model: "gpt-3.5-turbo",
@@ -77,6 +73,9 @@ function QuestionScreen({ navigation}) {
       }).then((response) => console.log(response.json().then((c) => {
         setHint(c.choices[0].message.content);
         console.log(c.choices[0].message.content);
+        let obj = pointsContext;
+        obj.hint = c.choices[0].message.content;
+        setPointsContext(obj);
         }
       )));
   };
@@ -85,10 +84,7 @@ function QuestionScreen({ navigation}) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: "100%"}}>
       <Text style={{fontSize:30}}>Question: {questionContext['question']} </Text>
-
-
       <TextInput
-      
         onChangeText={text => setUserInput(text)}
         value={userInput}
         placeholder="What's your question?"
@@ -97,8 +93,7 @@ function QuestionScreen({ navigation}) {
         title="Hint"
         onPress={handleSubmit}
       />
-      <Text>{hint}</Text>
-
+      {pointsContext.hint !== "" && <Text>{hint}</Text>}
       <QuestionButtons question={questionContext} newQuestion = {bank()} />
       <Text style={{fontSize:25}}>Points: {pointsContext.score}</Text>
       {pointsContext.score > 0 && pointsContext.score % 10 === 0 && <ConfettiCannon count={200} origin={{x: -10, y: 0}} fadeOut={true}/>}

@@ -15,6 +15,7 @@ function QuestionButtons({question, newQuestion}){
 
     let obj = pointsContext;
     obj.score = obj.score + 1;
+    obj.hint = "";
     setPointsContext(obj);
     setQuestionContext(newQuestion);
   }
