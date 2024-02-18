@@ -29,10 +29,10 @@ function QuestionScreen({ navigation}) {
     }
   }
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Question: {questionContext['question']} </Text>
+    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center', width: "100%"}}>
+      <Text style={{fontSize:30}}>Question: {questionContext['question']} </Text>
       <QuestionButtons question={questionContext} newQuestion = {bank()} />
-      <Text>Points: {pointsContext.score}</Text>
+      <Text style={{fontSize:25}}>Points: {pointsContext.score}</Text>
     </View>
   );
 }

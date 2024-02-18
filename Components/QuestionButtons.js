@@ -1,6 +1,7 @@
 import {useContext} from "react";
 import {GlobalContext, QuestionContext} from "../Contexts";
-import {Button} from "react-native";
+import {View} from "react-native";
+import {Input, Button} from 'react-native-elements';
 import * as React from "react";
 
 function QuestionButtons({question, newQuestion}){
@@ -11,7 +12,7 @@ function QuestionButtons({question, newQuestion}){
     answersArray.splice(Math.floor(Math.random() * (question['incorrect_answers'].length + 1)), 0, question['correct_answer']);
   }
   function onCorrectAnswer(){
-    
+
     let obj = pointsContext;
     obj.score = obj.score + 1;
     setPointsContext(obj);
@@ -23,15 +24,20 @@ function QuestionButtons({question, newQuestion}){
     setPointsContext(obj);
   }
   return (
-    <>
+    <View style = {{width: "80%", justifyContent: 'center', flex:1}}>
       {answersArray.map(answer =>
-        <Button
-          key={answer}
-          title={answer}
-          onPress={() => answer === question['correct_answer'] ? onCorrectAnswer(): onWrongAnswer()}
-        />
+        <View style={{padding:10}} key={answer}>
+          <Button
+            style={{padding: 10}}
+            titleStyle={{
+              fontSize: 20,
+            }}
+            title={answer}
+            onPress={() => answer === question['correct_answer'] ? onCorrectAnswer(): onWrongAnswer()}
+          />
+        </View>
       )}
-    </>
+    </View>
   );
 }
 export default QuestionButtons;
