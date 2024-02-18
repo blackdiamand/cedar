@@ -11,6 +11,7 @@ function QuestionButtons({question, newQuestion}){
     answersArray.splice(Math.floor(Math.random() * (question['incorrect_answers'].length + 1)), 0, question['correct_answer']);
   }
   function onCorrectAnswer(){
+    
     let obj = pointsContext;
     obj.score = obj.score + 1;
     setPointsContext(obj);

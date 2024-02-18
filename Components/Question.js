@@ -14,9 +14,15 @@ function QuestionScreen({ navigation}) {
     if (questionBankState === "all") {
       return questionBank[Math.floor(Math.random() * 200)];
     }
-    if (questionBankState === "Principles"){
-      let newBank = questionBank.filter((question) => question['category'] === "A: Principles of American Democracy");
+    const map = new Map([["Principles" , "A: Principles of American Democracy"],
+      ["System of Government", "B: System of Government"], ["Rights and Responsibilities", "C: Rights and Responsibilities"],
+    ["Colonial Period History", "A: Colonial Period and Independence (American History)"], ["History", "Recent American History and Other Important Historical Information"],
+      ["Geography", "Geography"], ["Holidays", "Holidays"]]);
+
+    if (map.has(questionBankState)){
+      let newBank = questionBank.filter((question) => question['category'] === map.get(questionBankState));
       return newBank[Math.floor(Math.random() * newBank.length)];
+      //return questionBank[Math.floor(Math.random() * 200)];
     }
     else{
       return questionBank[Math.floor(Math.random() * 200)];

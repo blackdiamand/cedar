@@ -32,27 +32,51 @@ function Dashboard({ navigation}) {
       />
       <Button
         title="System of Government"
-        onPress={() => navigation.navigate('System of Government')}
+        onPress={() => {
+          let obj = pointsContext;
+          obj.bankState = "System of Government";
+          setPointsContext(obj);
+          navigation.navigate('Questions')}}
       />
       <Button
         title="Rights and Responsibilities"
-        onPress={() => navigation.navigate('Rights and Responsibilities')}
+        onPress={() => {
+          let obj = pointsContext;
+          obj.bankState = "Rights and Responsibilities";
+          setPointsContext(obj);
+          navigation.navigate('Questions')}}
       />
       <Button
         title="Colonial Period History"
-        onPress={() => navigation.navigate('Colonial Period History')}
+        onPress={() => {
+          let obj = pointsContext;
+          obj.bankState = "Colonial Period History";
+          setPointsContext(obj);
+          navigation.navigate('Questions')}}
       />
       <Button
         title="History"
-        onPress={() => navigation.navigate('History')}
+        onPress={() => {
+          let obj = pointsContext;
+          obj.bankState = "History";
+          setPointsContext(obj);
+          navigation.navigate('Questions')}}
       />
       <Button
         title="Geography"
-        onPress={() => navigation.navigate('Geography')}
+        onPress={() => {
+          let obj = pointsContext;
+          obj.bankState = "Geography";
+          setPointsContext(obj);
+          navigation.navigate('Questions')}}
       />
       <Button
         title="Holidays"
-        onPress={() => navigation.navigate('Holidays')}
+        onPress={() => {
+          let obj = pointsContext;
+          obj.bankState = "Holidays";
+          setPointsContext(obj);
+          navigation.navigate('Questions')}}
       />
       {pointsContext.wrongAnswers.length > 0 &&
         <Button
