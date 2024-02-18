@@ -16,7 +16,7 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
 
-  const [pointsContext, setPointsContext] = useState({score:0, wrongAnswers : []});
+  const [pointsContext, setPointsContext] = useState({score:0, wrongAnswers : [], bankState: "all"});
   const [questionContext, setQuestionContext] = useState(questionBank[Math.floor(Math.random() * 200)]);
 
   return (
