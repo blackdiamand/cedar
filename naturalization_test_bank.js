@@ -1310,7 +1310,7 @@
   {
     "category": "A: Colonial Period and Independence (American History)",
     "question_id": 64,
-    "question": "There were 13 original states. Name three.",
+    "question": "There were 13 original states. Name one.",
     "correct_answer": "New Hampshire",
     "incorrect_answers": [
       "California",
@@ -1321,7 +1321,7 @@
   {
     "category": "A: Colonial Period and Independence (American History)",
     "question_id": 64,
-    "question": "There were 13 original states. Name three.",
+    "question": "There were 13 original states. Name one.",
     "correct_answer": "Massachusetts",
     "incorrect_answers": [
       "Texas",
@@ -1332,7 +1332,7 @@
   {
     "category": "A: Colonial Period and Independence (American History)",
     "question_id": 64,
-    "question": "There were 13 original states. Name three.",
+    "question": "There were 13 original states. Name one.",
     "correct_answer": "Rhode Island",
     "incorrect_answers": [
       "Washington",
