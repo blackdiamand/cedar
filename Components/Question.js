@@ -4,6 +4,7 @@ import {useState, useContext} from "react";
 import {QuestionContext, GlobalContext} from "../Contexts";
 import {questionBank} from "../naturalization_test_bank";
 import QuestionButtons from "./QuestionButtons";
+import ConfettiCannon from 'react-native-confetti-cannon';
 
 
 function QuestionScreen({ navigation}) {
@@ -100,6 +101,7 @@ function QuestionScreen({ navigation}) {
 
       <QuestionButtons question={questionContext} newQuestion = {bank()} />
       <Text style={{fontSize:25}}>Points: {pointsContext.score}</Text>
+      {pointsContext.score > 0 && pointsContext.score % 10 === 0 && <ConfettiCannon count={200} origin={{x: -10, y: 0}} fadeOut={true}/>}
     </View>
   );
 }
